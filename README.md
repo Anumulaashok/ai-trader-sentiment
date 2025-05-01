@@ -35,12 +35,32 @@ This project provides a simple Flask-based API that performs sentiment analysis 
 1.  **Get a NewsAPI Key:**
     You need an API key from NewsAPI to fetch news headlines. Register for a free key at [https://newsapi.org/](https://newsapi.org/).
 
-2.  **Update the API Key:**
-    Open the file `utils/news_fetcher.py` and replace the placeholder string `'YOUR_NEWSAPI_KEY'` with your actual NewsAPI key:
-    ```python
-    # Replace with your actual NewsAPI key
-    NEWS_API_KEY = 'YOUR_NEWSAPI_KEY' 
-    ```
+2.  **Set the Environment Variable:**
+    The application reads the NewsAPI key from the `NEWS_API_KEY` environment variable. You must set this variable before running the application.
+
+    *   **In your terminal (macOS/Linux):**
+        ```bash
+        export NEWS_API_KEY='your_actual_key' 
+        python app.py 
+        ```
+        *(Replace `your_actual_key` with your real key)*
+
+    *   **In your terminal (Windows Command Prompt):**
+        ```bash
+        set NEWS_API_KEY=your_actual_key
+        python app.py
+        ```
+        *(Replace `your_actual_key` with your real key)*
+
+    *   **In your terminal (Windows PowerShell):**
+        ```bash
+        $env:NEWS_API_KEY='your_actual_key'
+        python app.py
+        ```
+        *(Replace `your_actual_key` with your real key)*
+
+    *   **In Deployment Environments:**
+        If deploying this application (e.g., to a cloud platform, GitHub Actions, Codespaces), configure the `NEWS_API_KEY` as an environment variable or secret according to the platform's documentation.
 
 ## Running the Application
 
